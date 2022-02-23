@@ -10,18 +10,19 @@
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <title>Lord´s</title>
+    <link rel="icon" href="suit-spade-fill.svg">
   </head>
   <body>
   <div class="col-lg-8 mx-auto p-3 py-md-5">
   <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
     <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-      icono
+    <i class="bi bi-suit-spade"></i>
       <span class="fs-4">Lord´s</span>
     </a>
   </header>
 
   <main>
-    <h1><i class="bi bi-wrench-adjustable"></i>Bienvenidos a Lord´s</h1>
+    <h1><i class="bi bi-suit-spade-fill"></i>Bienvenidos a Lord´s</h1>
     <p class="fs-5 col-md-8">Las cosas son mejores como miembro de Lord´s. Obtenga acceso primero y exclusivo a los estilos e innovaciones más nuevos, envío gratis, recompensas de cumpleaños y más.</p>
 
     <div class="mb-5">
@@ -35,8 +36,9 @@
         <h2>Starter projects</h2>
         <p>Ready to beyond the starter template? Check out these open source projects that you can quickly duplicate to a new GitHub repository.</p>
         <ul class="icon-list">
-          <li><a href="https://github.com/twbs/bootstrap-npm-starter" rel="noopener" target="_blank">Bootstrap npm starter</a></li>
-          <li class="text-muted">Bootstrap Parcel starter (coming soon!)</li>
+          <li><a href="./explicaciones/">explicaciones</a></li>
+          <li><a href="./ejercicios/">ejercicios</a></li>
+          <li><a href=""></a></li>
         </ul>
       </div>
 
