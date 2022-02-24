@@ -17,8 +17,9 @@
 
         <label for="">Generador de numeros</label>
         <hr>
-        <?php
 
+
+        <?php
 $i = 0;
 while ($i <= 99):
     $i++;
@@ -27,6 +28,7 @@ endwhile;
 
 ?>
 
+        li{$}*100
 </body>
 
 </html>
