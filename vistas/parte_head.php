@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,3 +14,11 @@
     <title>no te preocupes</title>
     <link rel="icon" href="MaxPixel.net-Spade-Card-Game-Suit-Of-Spades-Spades-Cards-Game-145116.png">
 </head>
+<?php
+
+$hostname = "localhost";
+$username = "root";
+$passwrd  = "";
+$database = "sakila";
+
+$conexion = mysqli_connect($hostname, $username, $passwrd, $database) or die("No se puede conectar a la base de datos " . mysqli_connect_error());
