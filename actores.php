@@ -1,5 +1,41 @@
 <?php
-$pagina = "Actores";
 
+require_once "recursos/conexion.php";
+require_once "recursos/funciones.php";
+$pagina = "Actores";
+$error ="";
+
+
+try {
+
+    #borrar esto despues
+    echo "<pre>";
+    print_r($_POST);
+    echo "</pre>";
+
+    //verificar si le da click al boton
+    if (isset ($_POST['boton-guardar'])){
+        
+
+    //variables
+    $first_name = $_POST["first_name"];
+    $last_name = $_POST["last_name"];
+    //validaciones
+
+    $query = "INSERT INTO actor (first_name,last_name) VALUE ('$first_name', '$last_name')";
+    
+    $resultado = $conexion-> query($query) or die ("Error en query");
+    if ($resultado){
+        $_SESSION['mensaje'] = "Datos insertados correctamente";
+    }else{
+        throw new Exception("No se puede insertar los datos");
+    }
+    //refrezcar
+
+    refrezcar('actores.php');
+}
+} catch(Throwable $ex){
+    $error = $ex ->getMessage();
+}
 require_once "vistas/vista_actores.php";
 #no debe haber codigo despues de esta linea

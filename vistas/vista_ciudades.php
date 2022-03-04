@@ -5,9 +5,21 @@
     <div class="container">
         <h3><?php echo $pagina; ?></h3>
         <div class="row">
-            <form class="col-6 ">
-                Aqui va el formulario
+        <form class="col-6" method="post">
+                <div class="mb-3">
+                    <label for="">Nombre</label>
+                    <input type="text" name="name" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary" name="boton-guardar">Guardar</button>
+                </div>
             </form>
+            <?php if (!empty($error)): ?>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <?php echo $error; ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php endif; ?>
         </div>
         <div class="row">
             <form class="col-4 ">
