@@ -17,6 +17,120 @@
 
 <body>
 
+    <div class="row text-center">
+        <div class="col-4">
+            <span class="fs-1">
+                <i class="bi bi-file-earmark-person-fill"></i>
+            </span>
+            <a href="./actores.php">
+                <h3>Actores</h3>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <span class="fs-1">
+                <i class="bi bi-bookmarks-fill"></i>
+            </span>
+            <a href="./categorias.php">
+                <h3>Categorias</h3>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <span class="fs-1">
+                <i class="bi bi-person-circle"></i>
+            </span>
+            <a href="./clientes.php">
+                <h3>Clientes</h3>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <span class="fs-1">
+                <i class="bi bi-geo-alt-fill"></i>
+            </span>
+            <a href="./cuidades.php">
+                <h3>Cuidades</h3>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <span class="fs-1">
+                <i class="bi bi-translate"></i>
+            </span>
+            <a href="./idiomas.php">
+                <h3>Idiomas</h3>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <span class="fs-1">
+                <i class="bi bi-globe2"></i>
+            </span>
+            <a href="./paises.php">
+                <h3>Paises</h3>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <span class="fs-1">
+                <i class="bi bi-film"></i>
+            </span>
+            <a href="./peliculas.php">
+                <h3>Peliculas</h3>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <span class="fs-1">
+                <i class="bi bi-person-badge-fill"></i>
+            </span>
+            <a href="./staff.php">
+                <h3>Staff</h3>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <span class="fs-1">
+                <i class="bi bi-person-circle"></i>
+            </span>
+            <a href="./tiendas.php">
+                <h3>Tiendas</h3>
+            </a>
+        </div>
+
+    </div>
+
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample">
+        Button with data-bs-target
+    </button>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images,
+                lists, etc.
+            </div>
+            <div class="dropdown mt-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-bs-toggle="dropdown">
+                    Dropdown button
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
     <div class="col-lg-8 mx-auto p-3 py-md-5">
         <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
             <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
@@ -66,9 +180,7 @@
     </div>
 
 
-    <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
+    <?php require_once "vistas/parte_footer.php"; ?>
 </body>
 
 </html>

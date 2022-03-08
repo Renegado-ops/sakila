@@ -16,13 +16,19 @@ try {
     //verificar si le da click al boton
     if (isset ($_POST['boton-guardar'])){
         
- //variables
- $name = $_POST["name"];
- //validaciones
-
+    //variables
+    $city = $_POST["city"];
+    $country_id = $_POST["country_id"];
+    //validaciones
+    if (empty($city)){
+        throw new Exception("La cuidad no puede estar vacio");
+    }
+    if (empty($country_id)){
+        throw new Exception("La cuidad no puede estar vacio");
+    }
     //guardar
 
-    $query = "INSERT INTO category (name) VALUE ('$name')";
+    $query = "INSERT INTO city (city, country_id) VALUE ('$city', '$country_id')";
     
     $resultado = $conexion-> query($query) or die ("Error en query");
     if ($resultado){
