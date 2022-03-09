@@ -21,13 +21,22 @@ try {
     $first_name = $_POST["first_name"];
     $last_name = $_POST["last_name"];
     //validaciones
+    if(empty($first_name)){
+        throw new Exception("El nombre no puede estar vacio");
+    }
+    if (empty($last_name)){
+        throw new Exception("El apellido no puede estar vacio");
+    }
 
+    //guardar
     $query = "INSERT INTO actor (first_name,last_name) VALUE ('$first_name', '$last_name')";
     
     $resultado = $conexion-> query($query) or die ("Error en query");
     if ($resultado){
         $_SESSION['mensaje'] = "Datos insertados correctamente";
+        $script_alerta = alerta ("Insertado", "Datos correcto", "success");
     }else{
+        $script_alerta = alerta ("Error", "No pudo insertar", "Error");
         throw new Exception("No se puede insertar los datos");
     }
     //refrezcar

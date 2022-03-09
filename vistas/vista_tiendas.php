@@ -5,11 +5,42 @@
     <div class="container">
         <h3><?php echo $pagina; ?></h3>
         <div class="row">
-        <form class="col-6" method="post">
+            <form class="col-6" method="post">
                 <div class="mb-3">
-                    <label for="">Nombre</label>
-                    <input type="text" name="name" class="form-control">
+
+                    <label for="">Manager staff id</label>
+                    <select class="form-select" name="Manager_staff_id" aria-label="Default select example">
+                        <option selected>Selecciona</option>
+                        <?php
+                        $query = "SELECT * FROM staff";
+                        $resultado = mysqli_query($conexion, $query);
+
+                        if ($resultado) {
+                            while ($fila = mysqli_fetch_object($resultado)) {
+                                echo "<option value='$fila->staff_id'>$fila->first_name</option>";
+                            }
+                        }
+                        ?>
+                    </select>
+
+
+                    <label for="">Address id</label>
+                    <select class="form-select" name="address_id" aria-label="Default select example">
+                        <option selected>Selecciona</option>
+                        <?php
+                        $query = "SELECT * FROM address";
+                        $resultado = mysqli_query($conexion, $query);
+
+                        if ($resultado) {
+                            while ($fila = mysqli_fetch_object($resultado)) {
+                                echo "<option value='$fila->address_id'>$fila->address</option>";
+                            }
+                        }
+                        ?>
+                    </select>
                 </div>
+
+
                 <div class="mb-3">
                     <button class="btn btn-primary" name="boton-guardar">Guardar</button>
                 </div>
