@@ -7,19 +7,19 @@
         <div class="row">
             <form class="col-6" method="post">
                 <div class="mb-3">
-                    <label for="">Nombre</label>
-                    <input type="text" name="name" class="form-control">
+                    <label for="">First name</label>
+                    <input type="text" name="first_name" class="form-control">
                 </div>
 
                 <div class="mb-3">
-                    <label for="">Nombre</label>
-                    <input type="text" name="name" class="form-control">
+                    <label for="">Last name</label>
+                    <input type="text" name="last_name" class="form-control">
                 </div>
-
-                <label for="">Address id</label>
-                <select class="form-select" name="address_id" aria-label="Default select example">
-                    <option selected>Selecciona</option>
-                    <?php
+                <div class="mb-3">
+                    <label for="">Address id</label>
+                    <select class="form-select" name="address_id" aria-label="Default select example">
+                        <option selected>Selecciona</option>
+                        <?php
                         $query = "SELECT * FROM address";
                         $resultado = mysqli_query($conexion, $query);
 
@@ -29,36 +29,36 @@
                             }
                         }
                         ?>
-                </select>
-
-                <div class="mb-3">
-                    <label for="">Nombre</label>
-                    <input type="text" name="name" class="form-control">
+                    </select>
                 </div>
-
-                <label for="">Address id</label>
-                <select class="form-select" name="address_id" aria-label="Default select example">
-                    <option selected>Selecciona</option>
-                    <?php
-                        $query = "SELECT * FROM address";
+                <div class="mb-3">
+                    <label for="">Email</label>
+                    <input type="text" name="email" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="">Store id</label>
+                    <select class="form-select" name="store_id" aria-label="Default select example">
+                        <option selected>Selecciona</option>
+                        <?php
+                        $query = "SELECT * FROM store";
                         $resultado = mysqli_query($conexion, $query);
 
                         if ($resultado) {
                             while ($fila = mysqli_fetch_object($resultado)) {
-                                echo "<option value='$fila->address_id'>$fila->address</option>";
+                                echo "<option value='$fila->store_id'>$fila->store_id</option>";
                             }
                         }
                         ?>
-                </select>
-
+                    </select>
+                </div>
                 <div class="mb-3">
-                    <label for="">Nombre</label>
-                    <input type="text" name="name" class="form-control">
+                    <label for="">Username</label>
+                    <input type="text" name="username" class="form-control">
                 </div>
 
                 <div class="mb-3">
-                    <label for="">Nombre</label>
-                    <input type="text" name="name" class="form-control">
+                    <label for="">Password</label>
+                    <input type="text" name="password" class="form-control">
                 </div>
 
                 <div class="mb-3">

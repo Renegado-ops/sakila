@@ -5,11 +5,106 @@
     <div class="container">
         <h3><?php echo $pagina; ?></h3>
         <div class="row">
-        <form class="col-6" method="post">
+            <form class="col-6" method="post">
                 <div class="mb-3">
-                    <label for="">Nombre</label>
-                    <input type="text" name="name" class="form-control">
+                    <label for="">Title</label>
+                    <input type="text" name="title" class="form-control">
                 </div>
+
+                <div class="mb-3">
+                    <label for="">Description</label>
+                    <input type="text" name="title" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="">Release year</label>
+                    <input type="text" name="title" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="">Language</label>
+                    <select class="form-select" name="store_id" aria-label="Default select example">
+                        <option selected>Selecciona</option>
+                        <?php
+                        $query = "SELECT * FROM store";
+                        $resultado = mysqli_query($conexion, $query);
+
+                        if ($resultado) {
+                            while ($fila = mysqli_fetch_object($resultado)) {
+                                echo "<option value='$fila->store_id'>$fila->store_id</option>";
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="">Original language</label>
+                    <select class="form-select" name="store_id" aria-label="Default select example">
+                        <option selected>Selecciona</option>
+                        <?php
+                        $query = "SELECT * FROM store";
+                        $resultado = mysqli_query($conexion, $query);
+
+                        if ($resultado) {
+                            while ($fila = mysqli_fetch_object($resultado)) {
+                                echo "<option value='$fila->store_id'>$fila->store_id</option>";
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="">Rental duration</label>
+                    <input type="text" name="title" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="">Rental rate</label>
+                    <input type="text" name="title" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="">Length</label>
+                    <input type="text" name="title" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="">Replacement cost</label>
+                    <input type="text" name="title" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="">especial select</label>
+                    <select class="form-select" name="store_id" aria-label="Default select example">
+                        <option selected>Selecciona</option>
+                        <?php
+                        $query = "SELECT * FROM store";
+                        $resultado = mysqli_query($conexion, $query);
+
+                        if ($resultado) {
+                            while ($fila = mysqli_fetch_object($resultado)) {
+                                echo "<option value='$fila->store_id'>$fila->store_id</option>";
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="">Special select</label>
+                    <select class="form-select" name="store_id" aria-label="Default select example">
+                        <option selected>Selecciona</option>
+                        <?php
+                        $query = "SELECT * FROM store";
+                        $resultado = mysqli_query($conexion, $query);
+
+                        if ($resultado) {
+                            while ($fila = mysqli_fetch_object($resultado)) {
+                                echo "<option value='$fila->store_id'>$fila->store_id</option>";
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+
                 <div class="mb-3">
                     <button class="btn btn-primary" name="boton-guardar">Guardar</button>
                 </div>

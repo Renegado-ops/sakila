@@ -5,15 +5,62 @@
     <div class="container">
         <h3><?php echo $pagina; ?></h3>
         <div class="row">
-        <form class="col-6" method="post">
+            <form class="col-6" method="post">
+
                 <div class="mb-3">
-                    <label for="">Nombre</label>
+                    <label for="">Store</label>
+                    <select class="form-select" name="store_id" aria-label="Default select example">
+                        <option selected>Selecciona</option>
+                        <?php
+                        $query = "SELECT * FROM store";
+                        $resultado = mysqli_query($conexion, $query);
+
+                        if ($resultado) {
+                            while ($fila = mysqli_fetch_object($resultado)) {
+                                echo "<option value='$fila->store_id'>$fila->store_id</option>";
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="">First name</label>
                     <input type="text" name="first_name" class="form-control">
                 </div>
                 <div class="mb-3">
-                    <label for="">Apellido</label>
+                    <label for="">Last name</label>
                     <input type="text" name="last_name" class="form-control">
                 </div>
+
+                <div class="mb-3">
+                    <label for="">Email</label>
+                    <input type="text" name="email" class="form-control">
+                </div>
+                <div class="mb-3">
+
+                    <label for="">Address</label>
+                    <select class="form-select" name="address_id" aria-label="Default select example">
+                        <option selected>Selecciona</option>
+                        <?php
+                        $query = "SELECT * FROM address";
+                        $resultado = mysqli_query($conexion, $query);
+
+                        if ($resultado) {
+                            while ($fila = mysqli_fetch_object($resultado)) {
+                                echo "<option value='$fila->address_id'>$fila->address</option>";
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="start">Create day</label>
+
+                    <input class="form-control" type="date" id="start" name="create_date" value="2022-03-10"
+                        min="2018-01-01" max="2025-12-31">
+                </div>
+
                 <div class="mb-3">
                     <button class="btn btn-primary" name="boton-guardar">Guardar</button>
                 </div>

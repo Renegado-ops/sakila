@@ -17,13 +17,17 @@ try {
     if (isset ($_POST['boton-guardar'])){
         
         //variables
+        $store_id = $_POST["store_id"];
         $first_name = $_POST["first_name"];
         $last_name = $_POST["last_name"];
+        $email = $_POST["email"];
+        $address_id = $_POST["address_id"];
+        $create_date = $_POST["create_date"];
         //validaciones
     
     //guardar
 
-    $query = "INSERT INTO customer (first_name,last_name) VALUE ('$first_name','$last_name')";
+    $query = "INSERT INTO customer (store_id,first_name,last_name,email,address_id,create_date) VALUES ('$store_id','$first_name','$last_name','$email ','$address_id','$create_date')";
     echo $query;
     $resultado = $conexion-> query($query) or die ("Error en query");
     if ($resultado){
@@ -33,7 +37,7 @@ try {
     }
     //refrezcar
 
-    refrezcar('cliente.php');
+    refrezcar('clientes.php');
 }
 } catch(Throwable $ex){
     $error = $ex ->getMessage();
