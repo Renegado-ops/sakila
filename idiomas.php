@@ -20,7 +20,7 @@ try {
     $name = $_POST["name"];
     //validaciones
     if (empty($name)){
-        throw new Exception("El nombre no puede estar vacio "); 
+        throw new Exception("El name no puede estar vacio "); 
     }
     //guardar
 

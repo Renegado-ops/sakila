@@ -17,14 +17,14 @@ try {
     if (isset ($_POST['boton-guardar'])){
         
     //variables
-    $name = $_POST["country"];
+    $country = $_POST["country"];
     //validaciones
-    if (empty($name)){
-        throw new Exception("El nombre no puede estar vacio "); 
+    if (empty($country)){
+        throw new Exception("El country no puede estar vacio "); 
     }
     //guardar
 
-    $query = "INSERT INTO country (country) VALUE ('$name')";
+    $query = "INSERT INTO country (country) VALUE ('$country')";
     
     $resultado = $conexion-> query($query) or die ("Error en query");
     if ($resultado){

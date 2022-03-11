@@ -26,10 +26,10 @@ try {
     $password = $_POST["password"];
     //validaciones
     if (empty($first_name)){
-        throw new Exception("El nombre no puede estar vacio "); 
+        throw new Exception("El first name no puede estar vacio "); 
     }
     if (empty($last_name)){
-        throw new Exception("El apellido no puede estar vacio "); 
+        throw new Exception("El last name no puede estar vacio "); 
     }
     if (empty($address_id)){
         throw new Exception("El address no puede estar vacio "); 

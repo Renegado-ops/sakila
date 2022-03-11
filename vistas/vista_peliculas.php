@@ -13,25 +13,25 @@
 
                 <div class="mb-3">
                     <label for="">Description</label>
-                    <input type="text" name="title" class="form-control">
+                    <input type="text" name="description" class="form-control">
                 </div>
 
                 <div class="mb-3">
                     <label for="">Release year</label>
-                    <input type="text" name="title" class="form-control">
+                    <input type="text" name="release_year" class="form-control">
                 </div>
 
                 <div class="mb-3">
                     <label for="">Language</label>
-                    <select class="form-select" name="store_id" aria-label="Default select example">
+                    <select class="form-select" name="language" aria-label="Default select example">
                         <option selected>Selecciona</option>
                         <?php
-                        $query = "SELECT * FROM store";
+                        $query = "SELECT * FROM language";
                         $resultado = mysqli_query($conexion, $query);
 
                         if ($resultado) {
                             while ($fila = mysqli_fetch_object($resultado)) {
-                                echo "<option value='$fila->store_id'>$fila->store_id</option>";
+                                echo "<option value='$fila->language_id'>$fila->name</option>";
                             }
                         }
                         ?>
@@ -40,15 +40,15 @@
 
                 <div class="mb-3">
                     <label for="">Original language</label>
-                    <select class="form-select" name="store_id" aria-label="Default select example">
+                    <select class="form-select" name="original_language" aria-label="Default select example">
                         <option selected>Selecciona</option>
                         <?php
-                        $query = "SELECT * FROM store";
+                        $query = "SELECT * FROM original_language";
                         $resultado = mysqli_query($conexion, $query);
 
                         if ($resultado) {
                             while ($fila = mysqli_fetch_object($resultado)) {
-                                echo "<option value='$fila->store_id'>$fila->store_id</option>";
+                                echo "<option value='$fila->language_id'>$fila->name</option>";
                             }
                         }
                         ?>
@@ -56,24 +56,24 @@
                 </div>
                 <div class="mb-3">
                     <label for="">Rental duration</label>
-                    <input type="text" name="title" class="form-control">
+                    <input type="text" name="rental_duration" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label for="">Rental rate</label>
-                    <input type="text" name="title" class="form-control">
+                    <input type="text" name="rental_rate" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label for="">Length</label>
-                    <input type="text" name="title" class="form-control">
+                    <input type="text" name="length" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label for="">Replacement cost</label>
-                    <input type="text" name="title" class="form-control">
+                    <input type="text" name="replacement_cost" class="form-control">
                 </div>
 
                 <div class="mb-3">
-                    <label for="">especial select</label>
-                    <select class="form-select" name="store_id" aria-label="Default select example">
+                    <label for="">Rating</label>
+                    <select class="form-select" name="rating" aria-label="Default select example">
                         <option selected>Selecciona</option>
                         <?php
                         $query = "SELECT * FROM store";
@@ -89,8 +89,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="">Special select</label>
-                    <select class="form-select" name="store_id" aria-label="Default select example">
+                    <label for="">Special features</label>
+                    <select class="form-select" name="Special_features" aria-label="Default select example">
                         <option selected>Selecciona</option>
                         <?php
                         $query = "SELECT * FROM store";

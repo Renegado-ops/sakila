@@ -9,7 +9,7 @@
                 <div class="mb-3">
 
                     <label for="">Manager staff id</label>
-                    <select class="form-select" name="Manager_staff_id" aria-label="Default select example">
+                    <select class="form-select" name="manager_staff_id" aria-label="Default select example">
                         <option selected>Selecciona</option>
                         <?php
                         $query = "SELECT * FROM staff";

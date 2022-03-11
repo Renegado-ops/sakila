@@ -21,10 +21,10 @@ try {
     $country_id = $_POST["country_id"];
     //validaciones
     if (empty($city)){
-        throw new Exception("La cuidad no puede estar vacio");
+        throw new Exception("La city no puede estar vacio");
     }
     if (empty($country_id)){
-        throw new Exception("La cuidad no puede estar vacio");
+        throw new Exception("La country no puede estar vacio");
     }
     //guardar
 

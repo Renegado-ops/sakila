@@ -17,21 +17,21 @@ try {
     if (isset ($_POST['boton-guardar'])){
         
     //variables
-    $Manager_staff_id = $_POST["Manager_staffa_id"];
+    $manager_staff_id = $_POST["manager_staff_id"];
     $address_id = $_POST["address_id"];
 
 
     
     //validaciones
-    if (empty($Manager_staff_id)){
-        throw new Exception("El nombre no puede estar vacio "); 
+    if (empty($manager_staff_id)){
+        throw new Exception("El Manager_staff_id no puede estar vacio "); 
     }
     if (empty($address_id)){
-        throw new Exception("El nombre no puede estar vacio "); 
+        throw new Exception("El address_id no puede estar vacio "); 
     }
     //guardar
 
-    $query = "INSERT INTO store (Manager_staff_id,address_id) VALUE ('$Manager_staff_id','$address_id')";
+    $query = "INSERT INTO store (manager_staff_id,address_id) VALUE ('$manager_staff_id','$address_id')";
     
     echo $query;
     $resultado = $conexion-> query($query) or die ("Error en query");

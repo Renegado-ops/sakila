@@ -24,7 +24,24 @@ try {
         $address_id = $_POST["address_id"];
         $create_date = $_POST["create_date"];
         //validaciones
-    
+        if (empty($store_id)){
+            throw new Exception("La store no puede estar vacio");
+        }
+        if (empty($first_name)){
+            throw new Exception("La first name no puede estar vacio");
+        }
+        if (empty($last_name)){
+            throw new Exception("La last name no puede estar vacio");
+        }
+        if (empty($email)){
+            throw new Exception("La email no puede estar vacio");
+        }
+        if (empty($address_id)){
+            throw new Exception("La address id no puede estar vacio");
+        }
+        if (empty($create_date)){
+            throw new Exception("La create date no puede estar vacio");
+        }
     //guardar
 
     $query = "INSERT INTO customer (store_id,first_name,last_name,email,address_id,create_date) VALUES ('$store_id','$first_name','$last_name','$email ','$address_id','$create_date')";

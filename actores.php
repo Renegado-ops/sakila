@@ -22,10 +22,10 @@ try {
     $last_name = $_POST["last_name"];
     //validaciones
     if(empty($first_name)){
-        throw new Exception("El nombre no puede estar vacio");
+        throw new Exception("El first name no puede estar vacio");
     }
     if (empty($last_name)){
-        throw new Exception("El apellido no puede estar vacio");
+        throw new Exception("El last name no puede estar vacio");
     }
 
     //guardar
