@@ -43,7 +43,7 @@
                     <select class="form-select" name="original_language" aria-label="Default select example">
                         <option selected>Selecciona</option>
                         <?php
-                        $query = "SELECT * FROM original_language";
+                        $query = "SELECT * FROM language";
                         $resultado = mysqli_query($conexion, $query);
 
                         if ($resultado) {
@@ -76,12 +76,12 @@
                     <select class="form-select" name="rating" aria-label="Default select example">
                         <option selected>Selecciona</option>
                         <?php
-                        $query = "SELECT * FROM store";
+                        $query = "SELECT DISTINCT rating FROM film WHERE rating != '' ";
                         $resultado = mysqli_query($conexion, $query);
 
                         if ($resultado) {
                             while ($fila = mysqli_fetch_object($resultado)) {
-                                echo "<option value='$fila->store_id'>$fila->store_id</option>";
+                                echo "<option value='$fila->rating'>$fila->rating</option>";
                             }
                         }
                         ?>
@@ -93,12 +93,12 @@
                     <select class="form-select" name="Special_features" aria-label="Default select example">
                         <option selected>Selecciona</option>
                         <?php
-                        $query = "SELECT * FROM store";
+                        $query = "SELECT DISTINCT Special_features FROM film where Special_features != ''";
                         $resultado = mysqli_query($conexion, $query);
 
                         if ($resultado) {
                             while ($fila = mysqli_fetch_object($resultado)) {
-                                echo "<option value='$fila->store_id'>$fila->store_id</option>";
+                                echo "<option value='$fila->Special_features'>$fila->Special_features</option>";
                             }
                         }
                         ?>

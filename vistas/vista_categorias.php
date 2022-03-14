@@ -59,11 +59,20 @@
                         
                         ?>
                         <?php if ($resultado): ?>
-                        <?php while ($fila = mysqli_fetch_assoc($resultado)): ?>
+                        <?php while ($fila = mysqli_fetch_assoc($resultado)):
+                             ?>
+
+
                         <tr>
                             <td><?php echo $fila['category_id'];?></td>
                             <td><?php echo $fila['name'];?></td>
                             <td><?php echo $fila['last_update'];?></td>
+                            <td>
+                                <a
+                                    href='<?php echo $_SERVER['PHP_SELF'] ."?editar=".$fila['category_id']; ?>'>Editar</a>
+                                <a
+                                    href='<?php echo $_SERVER['PHP_SELF'] ."?eliminar".$fila['category_id']; ?>'>Eliminar</a>
+                            </td>
                         </tr>
                         <?php endwhile; ?>
                         <?php endif; ?>
