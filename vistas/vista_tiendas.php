@@ -1,7 +1,7 @@
 <?php require_once "parte_head.php"; ?>
 
 <body>
-    <?php require_once "parte_menu.php";?>
+    <?php require_once "parte_menu.php"; ?>
     <div class="container">
         <h3><?php echo $pagina; ?></h3>
         <div class="row">
@@ -45,7 +45,7 @@
                     <button class="btn btn-primary" name="boton-guardar">Guardar</button>
                 </div>
             </form>
-            <?php if (!empty($error)): ?>
+            <?php if (!empty($error)) : ?>
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 <?php echo $error; ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -75,23 +75,29 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php 
+                        <?php
                         $query = "SELECT * FROM store";
-                        $buscador = $_GET['buscador'] ??"";
-                        if ($buscador != ""){
+                        $buscador = $_GET['buscador'] ?? "";
+                        if ($buscador != "") {
                             $query = "SELECT * FROM store where store_id ='$buscador'";
                         }
                         $resultado = mysqli_query($conexion, $query);
                         ?>
 
-                        <?php if ($resultado):?>
-                        <?php while ($fila = mysqli_fetch_assoc($resultado)): ?>
+                        <?php if ($resultado) : ?>
+                        <?php while ($fila = mysqli_fetch_assoc($resultado)) : ?>
                         <tr>
-                            <td><?php echo $fila['store_id'];?></td>
-                            <td><?php echo $fila['manager_staff_id'];?></td>
-                            <td><?php echo $fila['address_id'];?></td>
+                            <td><?php echo $fila['store_id']; ?></td>
+                            <td><?php echo $fila['manager_staff_id']; ?></td>
+                            <td><?php echo $fila['address_id']; ?></td>
 
-                            <td><?php echo $fila['last_update'];?></td>
+                            <td><?php echo $fila['last_update']; ?></td>
+                            <td>
+                                <a
+                                    href='<?php echo $_SERVER['PHP_SELF'] . "?editar=" . $fila['store_id']; ?>'>Editar</a>
+                                <a
+                                    href='<?php echo $_SERVER['PHP_SELF'] . "?eliminar" . $fila['store_id']; ?>'>Eliminar</a>
+                            </td>
                         </tr>
                         <?php endwhile; ?>
                         <?php endif; ?>
@@ -100,7 +106,7 @@
             </div>
         </div>
     </div>
-    <?php require_once "parte_footer.php";?>
+    <?php require_once "parte_footer.php"; ?>
 </body>
 
 </html>

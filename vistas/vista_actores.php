@@ -66,6 +66,12 @@
                             <td><?php echo $fila['first_name'];?></td>
                             <td><?php echo $fila['last_name'];?></td>
                             <td><?php echo $fila['last_update'];?></td>
+                            <td>
+                                <a
+                                    href='<?php echo $_SERVER['PHP_SELF'] . "?editar=" . $fila['actor_id']; ?>'>Editar</a>
+                                <a
+                                    href='<?php echo $_SERVER['PHP_SELF'] . "?eliminar" . $fila['actor_id']; ?>'>Eliminar</a>
+                            </td>
                         </tr>
                         <?php endwhile; ?>
                         <?php endif; ?>

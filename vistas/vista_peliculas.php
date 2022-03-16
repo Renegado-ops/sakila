@@ -178,6 +178,11 @@
                             <td><?php echo $fila['special_features'];?></td>
 
                             <td><?php echo $fila['last_update'];?></td>
+                            <td>
+                                <a href='<?php echo $_SERVER['PHP_SELF'] . "?editar=" . $fila['film_id']; ?>'>Editar</a>
+                                <a
+                                    href='<?php echo $_SERVER['PHP_SELF'] . "?eliminar" . $fila['film_id']; ?>'>Eliminar</a>
+                            </td>
                         </tr>
                         <?php endwhile; ?>
                         <?php endif; ?>

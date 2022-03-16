@@ -65,7 +65,7 @@
                     <button class="btn btn-primary" name="boton-guardar">Guardar</button>
                 </div>
             </form>
-            <?php if (!empty($error)): ?>
+            <?php if (!empty($error)) : ?>
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 <?php echo $error; ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -102,11 +102,11 @@
                     <tbody>
                         <?php
                         $query = "SELECT * FROM customer";
-                        $buscador = $_GET['buscador'] ??"";
-                        if ($buscador != ""){
+                        $buscador = $_GET['buscador'] ?? "";
+                        if ($buscador != "") {
                             $query = "SELECT * FROM customer where first_name ='$buscador'";
                         }
-                        
+
                         $resultado = mysqli_query($conexion, $query);
                         if ($resultado) :
 
@@ -124,6 +124,12 @@
                             <td>{$fila->create_date}</td>
                         
                             <td>{$fila->last_update}</td>
+                            <td>
+                                <a
+                                    href='{$_SERVER['PHP_SELF']}?editar={$fila->customer_id}'>Editar</a>
+                                <a
+                                    href='{$_SERVER['PHP_SELF']}?eliminar={$fila->customer_id}'>Eliminar</a>
+                            </td>
                         </tr>";
                             endwhile;
                         endif;

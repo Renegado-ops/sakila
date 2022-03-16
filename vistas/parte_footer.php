@@ -7,4 +7,4 @@
 
 <script>
 <?php echo $script_alerta; ?>
-</script>';
+</script>

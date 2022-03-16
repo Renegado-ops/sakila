@@ -59,6 +59,12 @@
                             <td><?php echo $fila['country_id'];?></td>
                             <td><?php echo $fila['country'];?></td>
                             <td><?php echo $fila['last_update'];?></td>
+                            <td>
+                                <a
+                                    href='<?php echo $_SERVER['PHP_SELF'] . "?editar=" . $fila['country_id']; ?>'>Editar</a>
+                                <a
+                                    href='<?php echo $_SERVER['PHP_SELF'] . "?eliminar" . $fila['country_id']; ?>'>Eliminar</a>
+                            </td>
                         </tr>
                         <?php endwhile; ?>
                         <?php endif; ?>

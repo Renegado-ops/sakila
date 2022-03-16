@@ -1,7 +1,7 @@
 <?php require_once "parte_head.php"; ?>
 
 <body>
-    <?php require_once "parte_menu.php";?>
+    <?php require_once "parte_menu.php"; ?>
     <div class="container">
         <h3><?php echo $pagina; ?></h3>
         <div class="row">
@@ -15,15 +15,15 @@
                     <button class="btn btn-primary" name="boton-guardar">Guardar</button>
                 </div>
             </form>
-            <?php if (!empty($error)): ?>
+            <?php if (!empty($error)) : ?>
             <div class=" alert alert-warning alert-dismissible fade show" role="alert">
                 <?php echo $error; ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             <?php endif; ?>
-            <?php if (!empty($_SESSION)): ?>
+            <?php if (!empty($_SESSION['mensaje'])) : ?>
             <div class="alert alert-info alert-dismissible fade show" role="alert">
-                <?php echo $_SESSION; ?>
+                <?php echo $_SESSION['mensaje']; ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             <?php endif; ?>
@@ -50,29 +50,29 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php 
+                        <?php
                         $query = "SELECT * FROM category";
-                        $buscador = $_GET['buscador'] ??"";
-                        if ($buscador != ""){
+                        $buscador = $_GET['buscador'] ?? "";
+                        if ($buscador != "") {
                             $query = "SELECT * FROM category where name ='$buscador'";
                         }
                         $resultado = mysqli_query($conexion, $query);
-                        
+
                         ?>
-                        <?php if ($resultado): ?>
-                        <?php while ($fila = mysqli_fetch_assoc($resultado)):
-                             ?>
+                        <?php if ($resultado) : ?>
+                        <?php while ($fila = mysqli_fetch_assoc($resultado)) :
+                            ?>
 
 
                         <tr>
-                            <td><?php echo $fila['category_id'];?></td>
-                            <td><?php echo $fila['name'];?></td>
-                            <td><?php echo $fila['last_update'];?></td>
+                            <td><?php echo $fila['category_id']; ?></td>
+                            <td><?php echo $fila['name']; ?></td>
+                            <td><?php echo $fila['last_update']; ?></td>
                             <td>
                                 <a
-                                    href='<?php echo $_SERVER['PHP_SELF'] ."?editar=".$fila['category_id']; ?>'>Editar</a>
+                                    href='<?php echo $_SERVER['PHP_SELF'] . "?editar=" . $fila['category_id']; ?>'>Editar</a>
                                 <a
-                                    href='<?php echo $_SERVER['PHP_SELF'] ."?eliminar".$fila['category_id']; ?>'>Eliminar</a>
+                                    href='<?php echo $_SERVER['PHP_SELF'] . "?eliminar" . $fila['category_id']; ?>'>Eliminar</a>
                             </td>
                         </tr>
                         <?php endwhile; ?>
@@ -82,7 +82,7 @@
             </div>
         </div>
     </div>
-    <?php require_once "parte_footer.php";?>
+    <?php require_once "parte_footer.php"; ?>
 </body>
 
 </html>
