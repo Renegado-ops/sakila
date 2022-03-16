@@ -8,10 +8,6 @@ $error ="";
 
 try {
 
-    #borrar esto despues
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
 
     //verificar si le da click al boton
     if (isset ($_POST['boton-guardar'])){
